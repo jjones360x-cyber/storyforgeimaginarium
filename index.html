@@ -74,22 +74,33 @@ h3 {
     background: #e0a500;
 }
 
+/* Updated Navigation Styling */
 .nav {
-    margin: 25px 0;
+    background: #1a1a1a;
+    padding: 15px 20px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px 25px;
+    align-items: center;
 }
 
 .nav a {
     color: #f5b400;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .nav a:hover {
     text-decoration: underline;
+}
+
+.nav a.active {
+    color: #ffffff;
+    border-bottom: 2px solid #f5b400;
 }
 
 /* Responsive 16:9 Video Wrapper */
@@ -178,6 +189,16 @@ a.affiliate-link:hover {
 
 <img src="StoryforgeImaginarium-Header.jpg" alt="Storyforge Imaginarium Header" class="header-img" />
 
+<!-- Multi-Page Navigation Bar -->
+<div class="nav">
+  <a href="index.html" class="active">Home</a>
+  <a href="fantasy-scifi.html">Fantasy &amp; Sci-Fi</a>
+  <a href="business-nonfiction.html">Business &amp; Non-Fiction</a>
+  <a href="memoirs-film.html">Memoirs &amp; Film</a>
+  <a href="process.html">Process &amp; Pricing</a>
+  <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" style="margin-left: auto;">Book a Call ↗</a>
+</div>
+
 <div class="hero">
   <h2>Turn Book Browsers Into Buyers with Hollywood-Quality Book Trailers</h2>
 
@@ -201,12 +222,6 @@ a.affiliate-link:hover {
   <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank">
     Book a 15-Minute Discovery Call
   </a>
-</div>
-
-<div class="nav">
-  <a href="#fantasy">Fantasy &amp; Sci-Fi</a>
-  <a href="#business">Business Books</a>
-  <a href="#memoirs">Memoirs &amp; Film</a>
 </div>
 
 <hr>
@@ -254,7 +269,7 @@ a.affiliate-link:hover {
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/Zr8wEJaSH6w" allowfullscreen></iframe>
     </div>
-    <a class="affiliate-link" href="https://www.amazon.com/dp/B07X3MVKQ7/?tag=storyforge06-20" target="_blank">🎧 Listen to the "The Wandering Inn" audiobook on Amazon</a>
+    <a class="affiliate-link" href="https://www.amazon.com/dp/B07X3MVKQ7/?tag=storyforge06-20" target="_blank">🎧 Listen to "The Wandering Inn" audiobook on Amazon</a>
   </div>
 
   <div class="video" id="hewhofightswithmonsters">
