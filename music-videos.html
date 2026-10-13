@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cinematic Music Videos &amp; Album Production | Storyforge Imaginarium</title>
-<meta name="description" content="Storyforge Imaginarium specializes in cinematic music videos. Singles start at $1,000 per finished minute. Album projects start at $1,000 per minute for the first song, then $500 per finished minute for subsequent songs.">
+<meta name="description" content="Storyforge Imaginarium specializes in cinematic music videos. Singles start at $1,000 per finished minute. Album launch packages include 20 finished minutes for $10,000, with additional minutes at $500.">
 
 <style>
 /* Base Studio Styles */
@@ -179,6 +179,31 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
   .rate { font-size: 32px; }
   .cta { width: 100%; text-align: center; padding: 14px 18px; }
 }
+
+/* Cinematic campaign artwork and readable offer details */
+.promo-feature { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,340px); gap:32px; align-items:center; padding:30px; margin:32px 0; border:1px solid #b78b4d; border-radius:10px; background:linear-gradient(135deg,#111820,#070e19); }
+.promo-feature h2 { margin-top:0; font-size:clamp(28px,4vw,46px); line-height:1.15; color:#f3d19a; }
+.promo-feature img { display:block; width:100%; height:auto; border-radius:6px; }
+.turnaround-number { font-size:clamp(48px,7vw,76px); font-weight:bold; color:#d7f5ff; line-height:1.05; text-shadow:0 0 20px #2381b9; margin:10px 0; }
+.offer-terms { font-size:14px; color:#ccc; }
+.benefit-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:24px 0 40px; }
+.benefit { overflow:hidden; border:1px solid #b78b4d; border-radius:8px; background:#12171d; }
+.benefit-copy { padding:18px; }
+.benefit h3 { margin:0 0 10px; font-size:21px; color:#f3d19a; }
+.benefit p { margin:0; }
+.benefit-art { aspect-ratio:2.1; background-image:url('assets/music-signature-single.jpeg'); background-size:326% auto; background-position-y:68.1%; }
+.art-brand { background-position-x:3.2%; }
+.art-fans { background-position-x:50%; }
+.art-release { background-position-x:97%; }
+.album-art { background-image:url('assets/music-album-launch.jpeg'); }
+.asset-intro { max-width:850px; }
+@media(max-width:760px) {
+ .promo-feature { grid-template-columns:1fr; padding:22px; gap:24px; }
+ .promo-feature img { max-width:380px; margin:auto; }
+ .benefit-grid { grid-template-columns:1fr; }
+ .benefit-art { background-position-y:68.1%; }
+}
+
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -214,6 +239,29 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
   <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Book a Music Video Consultation</a>
 </section>
 
+
+<section class="promo-feature" aria-labelledby="turnaround-heading">
+ <div>
+  <p class="eyebrow">Signature Single · For Established Recording Artists</p>
+  <h2 id="turnaround-heading">Guaranteed<br><span class="turnaround-number">48-Hour</span><br>Turnaround</h2>
+  <p>Your music is already earning. Give your next release a cinematic identity worthy of your catalog.</p>
+  <p><strong>$1,000 USD per finished minute.</strong> Duration prorated.</p>
+  <p class="offer-terms">48 hours from agreed production kickoff after creative approval. Guarantee and additional terms are defined in the signed co-production agreement. 4K delivery may include upscaling.</p>
+  <a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=SINGLE">Email SINGLE + Your Track</a>
+ </div>
+ <a href="assets/music-signature-single.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View the Signature Single promotion at full size"><img src="assets/music-signature-single.jpeg" alt="Storyforge Signature Single promotion with cinematic imagery and the 48-hour turnaround offer" width="768" height="960" loading="lazy"></a>
+</section>
+
+<section aria-labelledby="lasting-heading">
+ <h2 id="lasting-heading">A Lasting Asset for Your Music Catalog</h2>
+ <p class="asset-intro">Support discovery, deepen fan connection, and give your music a stronger visual brand. A finished music video becomes an asset for your release campaign and artist channels.</p>
+ <div class="benefit-grid">
+  <article class="benefit"><div class="benefit-art art-brand" aria-hidden="true"></div><div class="benefit-copy"><h3>Build Your Brand</h3><p>Original characters and cinematic worlds shaped around your artist identity.</p></div></article>
+  <article class="benefit"><div class="benefit-art art-fans" aria-hidden="true"></div><div class="benefit-copy"><h3>Deepen Fan Connection</h3><p>Story-led visuals and synchronized performance scenes that invite repeat viewing.</p></div></article>
+  <article class="benefit"><div class="benefit-art art-release" aria-hidden="true"></div><div class="benefit-copy"><h3>Power Your Release</h3><p>A polished 4K music video for your release campaign and artist channels.</p></div></article>
+ </div>
+</section>
+
 <section aria-labelledby="packages-heading">
   <h2 id="packages-heading">Music Video Packages</h2>
   <p>Pricing is based on the finished running time of your music videos.</p>
@@ -222,7 +270,7 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
       <h3>Signature Single</h3>
       <p>A distinctive cinematic music video built around one song.</p>
       <p class="rate">$1,000</p>
-      <p class="rate-label">Starting rate per finished minute</p>
+      <p class="rate-label">USD per finished minute · duration prorated</p>
       <ul>
         <li>Collaborative concept, treatment, and visual direction</li>
         <li>Original characters or designs developed from your references</li>
@@ -230,30 +278,47 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
         <li>Lip-synchronized performance where the concept calls for it</li>
         <li>4K music video delivery</li>
       </ul>
-      <p class="example"><strong>Example:</strong> A 3-minute single starts at <strong>$3,000</strong>.</p>
-      <p>Music distribution is not included in the single package.</p>
+      <p class="example"><strong>Example:</strong> A 3-minute single is <strong>$3,000</strong>.</p>
+      <p>Release and distribution support is available separately.</p>
     </article>
     <article class="package">
       <h3>Artist Album Launch</h3>
       <p>A cohesive visual identity across your album's music videos.</p>
-      <p class="rate">$1,000 <span style="font-size: 18px;">/ minute</span></p>
-      <p class="rate-label">First song</p>
-      <p class="rate">$500 <span style="font-size: 18px;">/ minute</span></p>
-      <p class="rate-label">Every subsequent song in the album project</p>
+      <p class="rate">$10,000</p>
+      <p class="rate-label">USD · includes 20 minutes of finished video</p>
+      <p class="rate">$500 <span style="font-size:18px;">/ additional minute</span></p>
       <ul>
         <li>Cinematic music videos with a shared visual identity</li>
-        <li>Album cover and track artwork</li>
+        <li>One album cover and artwork for up to 10 tracks</li>
         <li>Release metadata preparation</li>
-        <li>Music and music-video distribution support</li>
+        <li>Client-owned account setup, audio and eligible video submissions</li>
         <li>YouTube release support</li>
       </ul>
-      <p class="example"><strong>Example:</strong> Five 3-minute songs start at <strong>$9,000</strong>: $3,000 for the first song, plus $1,500 for each of the next four.</p>
+      <p class="example"><strong>Example:</strong> 30 finished minutes total <strong>$15,000</strong>: $10,000 for the included 20 minutes, plus $5,000 for 10 additional minutes.</p>
     </article>
   </div>
-  <p>For an album project, the total is the first song's finished minutes × $1,000, plus all subsequent songs' finished minutes × $500. We confirm the creative scope, running times, and delivery schedule with you before production.</p>
+  <p class="offer-terms">Album package: one artist, one album, up to 10 tracks. Album schedule and additional terms are agreed in writing. Platform acceptance and timing vary; third-party fees are extra. 4K delivery may include upscaling.</p>
 </section>
 
 <hr>
+
+
+<section class="promo-feature" aria-labelledby="album-banner-heading">
+ <div>
+  <p class="eyebrow">Artist Album Launch</p>
+  <h2 id="album-banner-heading">Your Album.<br>A Cinematic World.</h2>
+  <p>Turn your next album into a connected collection of music videos—with a consistent artist identity and coordinated release support.</p>
+  <p><strong>20 minutes of finished video · Artwork · Release support</strong></p>
+  <p>Build recognition. Deepen fan connection. Give every track a visual life.</p>
+  <a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=ALBUM">Email ALBUM to Plan Your Launch</a>
+ </div>
+ <a href="assets/music-album-launch.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View the Artist Album Launch promotion at full size"><img src="assets/music-album-launch.jpeg" alt="Artist Album Launch promotion with connected cinematic worlds, album artwork, and release support" width="768" height="960" loading="lazy"></a>
+</section>
+<div class="benefit-grid">
+ <article class="benefit"><div class="benefit-art album-art art-brand" aria-hidden="true"></div><div class="benefit-copy"><h3>Cinematic Collection</h3><p>Original characters, synchronized performance scenes, and polished 4K music videos.</p></div></article>
+ <article class="benefit"><div class="benefit-art album-art art-fans" aria-hidden="true"></div><div class="benefit-copy"><h3>Album + Track Art</h3><p>One album cover, artwork for up to 10 tracks, title development, and metadata.</p></div></article>
+ <article class="benefit"><div class="benefit-art album-art art-release" aria-hidden="true"></div><div class="benefit-copy"><h3>Release Concierge</h3><p>Client-owned account setup, audio and eligible video submissions, plus YouTube uploads.</p></div></article>
+</div>
 
 <section aria-labelledby="creative-heading">
   <h2 id="creative-heading">A Visual Story That Belongs to Your Music</h2>
@@ -273,11 +338,12 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
 <hr>
 
 <section aria-labelledby="partnership-heading">
-  <h2 id="partnership-heading">Label &amp; Catalog Partnership</h2>
-  <p>Planning an ongoing slate of releases? Book a discovery call to discuss music video production across your artist roster or catalog.</p>
+  <h2 id="partnership-heading">Make Your Next Release an Event.</h2>
+  <p>For a label or catalog partnership, or an ongoing slate of releases, Book a discovery call to discuss music video production across your artist roster or catalog.</p>
   <p><strong>Jeff Jones</strong> | Executive Producer, Storyforge Imaginarium<br>
   Call or text <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></p>
-  <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Let's Plan Your Music Videos</a>
+  <p>Email <a href="mailto:Jeff@StoryforgeImaginarium.com">Jeff@StoryforgeImaginarium.com</a></p>
+  <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Book a 15-Minute Discovery Call</a>
 </section>
 </main>
 </body>
