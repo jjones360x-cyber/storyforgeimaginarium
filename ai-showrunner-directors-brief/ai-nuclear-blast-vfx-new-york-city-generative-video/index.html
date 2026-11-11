@@ -40,7 +40,7 @@ footer{border-top:1px solid #444;color:#bbb}
 <main>
 <p class="eyebrow">The AI Showrunner — Director’s Brief · November 9, 2026</p>
 <h1>Independence Day–Scale Destruction in One Day: An AI-First VFX Case Study</h1>
-<p class="byline">By Jeff Jones · Founder &amp; AI Film Director, Storyforge Imaginarium</p>
+<p class="byline">By Jeff Jones · Founder & AI Film Director, Storyforge Imaginarium</p>
 <img class="hero" src="/assets/new-york-city-ai-vfx-nuclear-blast-visualization.jpg" alt="Fictional AI-generated cinematic visualization of a nuclear blast over the New York City skyline" width="2048" height="1143" loading="eager">
 <p><strong>How quickly can a director put an impossible visual-effects idea on screen?</strong> Storyforge Imaginarium created this fictional New York City destruction sequence in a single production day—using AI-first filmmaking to visualize an event at the scale audiences associate with blockbuster spectacles such as <em>Independence Day</em>.</p>
 <div class="callout"><strong>Production note:</strong> This is a fictional cinematic visualization created for filmmaking and visual-effects demonstration. It is not a scientific prediction, engineering model or emergency-planning simulation.</div>
@@ -107,6 +107,44 @@ footer{border-top:1px solid #444;color:#bbb}
 </section>
 <p class="closing"><strong>Watch the film:</strong> <a href="https://www.youtube.com/watch?v=W0N-096ZV4M">New York City Nuclear Blast Simulation on YouTube</a>.<br><strong>Discuss a project:</strong> <a href="mailto:Jeff@StoryforgeImaginarium.com?subject=AI-first%20VFX%20project">Jeff@StoryforgeImaginarium.com</a></p>
 <p><a href="/ai-showrunner-directors-brief/">← Back to The AI Showrunner — Director’s Brief</a></p>
+
+<section class="article-card" id="newsletter-signup" style="margin-top:40px;">
+  <h2>Get the AI Showrunner Brief</h2>
+  <p>New articles on AI filmmaking, book-to-screen, and production. No spam — just the brief when something new goes up.</p>
+  <form id="showrunner-form" action="https://script.google.com/macros/s/AKfycbwWPgjKTvuPxzhKf1jjOMKLJy9PMpo_Y6P7N-t-Lga-lXOGoNPNgK64guMdxraTfkCyXw/exec" method="POST" style="display:grid;gap:12px;max-width:480px;">
+    <input type="text" name="name" placeholder="Your name" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="email" name="email" placeholder="Email address" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="text" name="company" placeholder="Company (optional)" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <select name="howHeard" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+      <option value="" disabled selected>How did you hear about us?</option>
+      <option value="LinkedIn">LinkedIn</option>
+      <option value="YouTube">YouTube</option>
+      <option value="Facebook">Facebook</option>
+      <option value="X">X</option>
+      <option value="Other">Other website</option>
+    </select>
+    <input type="text" name="sourceDetails" placeholder="If other, which website?" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <button type="submit" class="cta" style="margin-top:8px;border:none;cursor:pointer;">Subscribe</button>
+  </form>
+  <p id="form-message" style="display:none;margin-top:12px;color:#f5b400;"></p>
+</section>
+<script>
+document.getElementById('showrunner-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const msg = document.getElementById('form-message');
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: data });
+    msg.textContent = 'Thanks — you’re on the list!';
+    msg.style.display = 'block';
+    form.reset();
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again or email jeff@storyforgeimaginarium.com';
+    msg.style.display = 'block';
+  }
+});
+</script>
 </main>
 <footer>© Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</footer>
 </body>
