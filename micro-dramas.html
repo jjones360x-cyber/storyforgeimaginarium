@@ -107,6 +107,19 @@ h3 {
     border-bottom: 2px solid #f5b400;
 }
 
+.nav a.login-btn {
+    background: #f5b400;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+.nav a.login-btn:hover {
+    background: #e0a500;
+    text-decoration: none;
+}
+
 /* Responsive 16:9 Video Wrapper */
 .video {
     margin-bottom: 50px;
@@ -188,6 +201,7 @@ a.affiliate-link:hover {
 @media(max-width:600px) {
  .nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 14px; padding:16px; }
  .nav a { font-size:15px; width:fit-content; }
+ .nav a.login-btn { margin-left:0; }
  .nav .nav-cta { margin-left:0; }
  .footer-links { flex-direction:column; align-items:flex-start; }
 }
@@ -195,7 +209,7 @@ a.affiliate-link:hover {
 </head>
 <body>
 <a href="/"><img class="header-img" src="/StoryforgeImaginarium-Header.jpg" alt="Storyforge Imaginarium"></a>
-<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a><a href="/book-to-screen.html">Book to Screen</a><a href="/micro-dramas.html" class="active">Micro Dramas</a><a href="/music-videos.html">Music Videos</a><a href="/process.html">Process & Pricing</a><a href="/jeff-jones/">Meet Jeff Jones</a></nav>
+<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a><a href="/book-to-screen.html">Book to Screen</a><a href="/micro-dramas.html" class="active">Micro Dramas</a><a href="/music-videos.html">Music Videos</a><a href="/process.html">Process & Pricing</a><a href="/jeff-jones/">Meet Jeff Jones</a><a href="/client-login.html" class="login-btn">LOGIN</a></nav>
 <main>
 <div class="hero">
 <h1>Micro Dramas</h1>
@@ -236,6 +250,7 @@ a.affiliate-link:hover {
 <a href="/jeff-jones/">Jeff Jones</a>
 <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call</a>
 <span>Studio Phone: <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></span>
+<a href="/client-login.html">LOGIN</a>
 </nav>
 </footer>
 </body>
