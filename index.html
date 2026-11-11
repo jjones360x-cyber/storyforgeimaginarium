@@ -177,15 +177,15 @@ a.affiliate-link:hover {
 .nav .nav-cta { margin-left:auto; }
 .site-footer { margin-top:48px; padding:28px 24px; background:#1a1a1a; border:1px solid #333; border-radius:6px; }
 .site-footer h2 { font-size:20px; margin:0 0 14px; color:#f5b400; }
-.footer-links { display:flex; flex-wrap:wrap; gap:12px 24px; }
-.footer-links a { color:#f5b400; font-weight:bold; text-decoration:none; }
+.footer-links { display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; }
+.footer-links a, .footer-links span { color:#f5b400; font-weight:bold; text-decoration:none; }
 .footer-links a:hover, .footer-links a[aria-current="page"] { text-decoration:underline; }
 .portfolio-link { color:#f5b400; font-weight:bold; }
 @media(max-width:600px) {
  .nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 14px; padding:16px; }
  .nav a { font-size:15px; width:fit-content; }
  .nav .nav-cta { margin-left:0; }
- .footer-links { flex-direction:column; }
+ .footer-links { flex-direction:column; align-items:flex-start; }
 }
 
 </style>
@@ -368,19 +368,20 @@ a.affiliate-link:hover {
 </p>
 
 <p>
-  <strong>Call or text Jeff Jones directly:</strong> <span class="phone-highlight">(208) 807-7789</span> Mon-Fri 2:00 - 4:00 PM PST
+  <strong>Studio Phone:</strong> <span class="phone-highlight">(208) 807-7789</span> Mon-Fri 2:00 - 4:00 PM PST
 </p>
 
-<a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank">
+<a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">
   Book a 15-Minute Discovery Call
 </a>
 
 <footer class="site-footer">
-  <h2>Explore Our Work & Insights</h2>
-  <nav class="footer-links" aria-label="Portfolio categories">
-    <a href="book-to-screen.html">Book-to-Screen Services</a><a href="/ai-showrunner-directors-brief/">Development Guides</a><a href="fantasy-scifi.html">Fantasy & Sci-Fi</a>
-    <a href="business-nonfiction.html">Business & Non-Fiction</a>
-    <a href="memoirs-film.html">Memoirs & Film</a>
+  <p>Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a>
+    <a href="/jeff-jones/">Jeff Jones</a>
+    <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call</a>
+    <span>Studio Phone: <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></span>
   </nav>
 </footer>
 
