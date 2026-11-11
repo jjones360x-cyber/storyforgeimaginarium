@@ -25,7 +25,7 @@
 </head>
 <body>
 <a href="/"><img class="header-img" src="/StoryforgeImaginarium-Header.jpg" alt="Storyforge Imaginarium"></a>
-<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/music-videos.html">Music Videos</a><a href="/book-to-screen.html">Book to Screen</a><a href="/ai-showrunner-directors-brief/">The AI Showrunner</a><a href="/jeff-jones/">Meet Jeff Jones</a><a href="/process.html">Process &amp; Pricing</a></nav>
+<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/music-videos.html">Music Videos</a><a href="/book-to-screen.html">Book to Screen</a><a href="/ai-showrunner-directors-brief/">The AI Showrunner</a><a href="/jeff-jones/">Meet Jeff Jones</a><a href="/process.html">Process & Pricing</a></nav>
 <main>
 <a href="/ai-showrunner-directors-brief/"><img class="masthead" src="/assets/ai-showrunner-masthead.jpg" alt="The AI Showrunner — Director’s Brief by Storyforge Imaginarium"></a>
 <p class="eyebrow">The AI Showrunner — Director’s Brief</p>
@@ -64,6 +64,45 @@
 <p><strong>Storyforge Imaginarium — Hollywood Quality. Silicon Valley Speed.</strong></p>
 <p><a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=AI-first%20VFX%20sequence%20inquiry">Discuss a Paid VFX Development Phase</a></p>
 <p><a href="/ai-showrunner-directors-brief/">← Read more from The AI Showrunner</a></p>
+
+<section class="article-card" id="newsletter-signup" style="margin-top:40px;">
+  <h2>Get the AI Showrunner Brief</h2>
+  <p>New articles on AI filmmaking, book-to-screen, and production. No spam — just the brief when something new goes up.</p>
+  <form id="showrunner-form" action="https://script.google.com/macros/s/AKfycbwWPgjKTvuPxzhKf1jjOMKLJy9PMpo_Y6P7N-t-Lga-lXOGoNPNgK64guMdxraTfkCyXw/exec" method="POST" style="display:grid;gap:12px;max-width:480px;">
+    <input type="text" name="name" placeholder="Your name" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="email" name="email" placeholder="Email address" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="text" name="company" placeholder="Company (optional)" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <select name="howHeard" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+      <option value="" disabled selected>How did you hear about us?</option>
+      <option value="LinkedIn">LinkedIn</option>
+      <option value="YouTube">YouTube</option>
+      <option value="Facebook">Facebook</option>
+      <option value="X">X</option>
+      <option value="Other">Other website</option>
+    </select>
+    <input type="text" name="sourceDetails" placeholder="If other, which website?" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <button type="submit" class="cta" style="margin-top:8px;border:none;cursor:pointer;">Subscribe</button>
+  </form>
+  <p id="form-message" style="display:none;margin-top:12px;color:#f5b400;"></p>
+</section>
+<script>
+document.getElementById('showrunner-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const msg = document.getElementById('form-message');
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: data });
+    msg.textContent = 'Thanks — you’re on the list!';
+    msg.style.display = 'block';
+    form.reset();
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again or email jeff@storyforgeimaginarium.com';
+    msg.style.display = 'block';
+  }
+});
+</script>
 </main>
 <footer class="site-footer"><p>Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</p><a href="/ai-showrunner-directors-brief/">The AI Showrunner</a> · <a href="/jeff-jones/">Jeff Jones</a> · <a href="mailto:Jeff@StoryforgeImaginarium.com">Contact the studio</a></footer>
-</body></html>
+</body>
+</html>
