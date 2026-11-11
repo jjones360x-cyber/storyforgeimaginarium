@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portal Login | Storyforge Imaginarium</title>
+<meta name="description" content="Client portal login for Storyforge Imaginarium production partners.">
+<meta name="robots" content="noindex">
+<style>
+* { box-sizing: border-box; }
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+.login-container {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto 60px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.login-container h1 {
+  color: #f5b400;
+  font-size: 28px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.login-container .subtitle {
+  color: #aaa;
+  text-align: center;
+  margin: 0 0 28px;
+  font-size: 15px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ddd;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+}
+input:focus {
+  outline: none;
+  border-color: #f5b400;
+}
+button {
+  width: 100%;
+  background: #f5b400;
+  color: #000;
+  border: none;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #e0a500;
+}
+.error-message {
+  background: #3a1a1a;
+  border: 1px solid #c44;
+  color: #f88;
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin-top: 18px;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+}
+.error-message.show {
+  display: block;
+}
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  color: #f5b400;
+  text-decoration: none;
+  font-size: 14px;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+.footer-note {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+<a href="/"><img src="/StoryforgeImaginarium-Header.jpg" alt="Storyforge Imaginarium" class="header-img"></a>
+
+<div class="login-container">
+  <h1>Client Portal</h1>
+  <p class="subtitle">Production partners — sign in to view assets & deliverables</p>
+
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="username">Username or Email</label>
+      <input type="text" id="username" name="username" required autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password">
+    </div>
+    <button type="submit">Sign In</button>
+  </form>
+
+  <div id="error" class="error-message">
+    Login failed. Username not found or incorrect password.
+  </div>
+
+  <a href="/" class="back-link">← Back to Storyforge Imaginarium</a>
+  <p class="footer-note">Secure client access · Storyforge Imaginarium</p>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var errorEl = document.getElementById('error');
+  errorEl.classList.add('show');
+  // Optional: clear fields or shake the form for extra polish
+  document.getElementById('password').value = '';
+});
+</script>
+</body>
+</html>
