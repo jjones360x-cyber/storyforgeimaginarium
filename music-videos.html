@@ -58,6 +58,19 @@ body {
     border-bottom: 2px solid #f5b400;
 }
 
+.nav a.login-btn {
+    background: #f5b400;
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+.nav a.login-btn:hover {
+    background: #e0a500;
+    text-decoration: none;
+}
+
 /* Hero Section */
 .hero {
     background: #1a1a1a;
@@ -210,15 +223,16 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
 .nav .nav-cta { margin-left:auto; }
 .site-footer { margin-top:48px; padding:28px 24px; background:#1a1a1a; border:1px solid #333; border-radius:6px; }
 .site-footer h2 { font-size:20px; margin:0 0 14px; color:#f5b400; }
-.footer-links { display:flex; flex-wrap:wrap; gap:12px 24px; }
-.footer-links a { color:#f5b400; font-weight:bold; text-decoration:none; }
+.footer-links { display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; }
+.footer-links a, .footer-links span { color:#f5b400; font-weight:bold; text-decoration:none; }
 .footer-links a:hover, .footer-links a[aria-current="page"] { text-decoration:underline; }
 .portfolio-link { color:#f5b400; font-weight:bold; }
 @media(max-width:600px) {
  .nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 14px; padding:16px; }
  .nav a { font-size:15px; width:fit-content; }
+ .nav a.login-btn { margin-left:0; }
  .nav .nav-cta { margin-left:0; }
- .footer-links { flex-direction:column; }
+ .footer-links { flex-direction:column; align-items:flex-start; }
 }
 
 </style>
@@ -237,7 +251,7 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
 
 <body>
 <img src="StoryforgeImaginarium-Header.jpg" alt="Storyforge Imaginarium Header" class="header-img">
-<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a><a href="/book-to-screen.html">Book to Screen</a><a href="/micro-dramas.html">Micro Dramas</a><a href="/music-videos.html" class="active">Music Videos</a><a href="/process.html">Process & Pricing</a><a href="/jeff-jones/">Meet Jeff Jones</a></nav>
+<nav class="nav" aria-label="Main navigation"><a href="/">Home</a><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a><a href="/book-to-screen.html">Book to Screen</a><a href="/micro-dramas.html">Micro Dramas</a><a href="/music-videos.html" class="active">Music Videos</a><a href="/process.html">Process & Pricing</a><a href="/jeff-jones/">Meet Jeff Jones</a><a href="/client-login.html" class="login-btn">LOGIN</a></nav>
 
 <main>
 <section class="promo-feature" aria-labelledby="turnaround-heading">
@@ -247,12 +261,12 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
   <p>Your music is already earning. Give your next release a cinematic identity worthy of your catalog.</p>
   <p><strong>$1,000 USD per finished minute.</strong> Duration prorated.</p>
   <p class="offer-terms">48 hours from agreed production kickoff after creative approval. Guarantee and additional terms are defined in the signed co-production agreement. 4K delivery may include upscaling.</p>
-  <a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=SINGLE">Email SINGLE + Your Track</a>
+  <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Book a Music Video Consultation</a>
  </div>
  <a href="assets/music-signature-single.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View the Signature Single promotion at full size"><img src="assets/music-signature-single.jpeg" alt="Storyforge Signature Single promotion with cinematic imagery and the 48-hour turnaround offer" width="768" height="960" loading="lazy"></a>
 </section>
 
-<section class="hero" id="canvas-starter"><h2>Canvas Starter for Artists & Composers</h2><p>Commission a cinematic three-to-eight-second Spotify loop for one song, or discuss a coordinated set for your release. Fee and revision scope are quoted before production.</p><p>48-hour turnaround from agreed kickoff after creative approval; scheduling and delivery terms are set in the written agreement.</p><a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=Canvas%20Starter">Request a Canvas Starter Quote</a><p><a href="/ai-showrunner-directors-brief/spotify-canvas-looping-video/">Read the Spotify Canvas findings and creative guide</a></p></section><section aria-labelledby="lasting-heading">
+<section class="hero" id="canvas-starter"><h2>Canvas Starter for Artists & Composers</h2><p>Commission a cinematic three-to-eight-second Spotify loop for one song, or discuss a coordinated set for your release. Fee and revision scope are quoted before production.</p><p>48-hour turnaround from agreed kickoff after creative approval; scheduling and delivery terms are set in the written agreement.</p><a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Request a Canvas Starter Quote</a><p><a href="/ai-showrunner-directors-brief/spotify-canvas-looping-video/">Read the Spotify Canvas findings and creative guide</a></p></section><section aria-labelledby="lasting-heading">
  <h2 id="lasting-heading">A Lasting Asset for Your Music Catalog</h2>
  <p class="asset-intro">Support discovery, deepen fan connection, and give your music a stronger visual brand. A finished music video becomes an asset for your release campaign and artist channels.</p>
  <div class="benefit-grid">
@@ -310,7 +324,7 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
   <p>Turn your next album into a connected collection of music videos—with a consistent artist identity and coordinated release support.</p>
   <p><strong>20 minutes of finished video · Artwork · Release support</strong></p>
   <p>Build recognition. Deepen fan connection. Give every track a visual life.</p>
-  <a class="cta" href="mailto:Jeff@StoryforgeImaginarium.com?subject=ALBUM">Email ALBUM to Plan Your Launch</a>
+  <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Plan Your Album Launch</a>
  </div>
  <a href="assets/music-album-launch.jpeg" target="_blank" rel="noopener noreferrer" aria-label="View the Artist Album Launch promotion at full size"><img src="assets/music-album-launch.jpeg" alt="Artist Album Launch promotion with connected cinematic worlds, album artwork, and release support" width="768" height="960" loading="lazy"></a>
 </section>
@@ -341,17 +355,18 @@ a:focus-visible { outline: 3px solid #f5b400; outline-offset: 5px; }
   <h2 id="partnership-heading">Make Your Next Release an Event.</h2>
   <p>For a label or catalog partnership, or an ongoing slate of releases, Book a discovery call to discuss music video production across your artist roster or catalog.</p>
   <p><strong>Jeff Jones</strong> | Executive Producer, Storyforge Imaginarium<br>
-  Call or text <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></p>
-  <p>Email <a href="mailto:Jeff@StoryforgeImaginarium.com">Jeff@StoryforgeImaginarium.com</a></p>
+  <strong>Studio Phone:</strong> <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></p>
   <a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Book a 15-Minute Discovery Call</a>
 </section>
 </main>
 <footer class="site-footer">
-  <h2>Explore Our Work</h2>
-  <nav class="footer-links" aria-label="Portfolio categories">
-    <a href="fantasy-scifi.html">Fantasy & Sci-Fi</a>
-    <a href="business-nonfiction.html">Business & Non-Fiction</a>
-    <a href="memoirs-film.html">Memoirs & Film</a>
+  <p>Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</p>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a>
+    <a href="/jeff-jones/">Jeff Jones</a>
+    <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call</a>
+    <span>Studio Phone: <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></span>
+    <a href="/client-login.html">LOGIN</a>
   </nav>
 </footer>
 
