@@ -227,4 +227,42 @@ figure{margin:28px 0}figure img{width:100%;height:auto;border-radius:6px}figcapt
 <p>Perhaps you have been waiting for a producer to notice your novel. Perhaps you have been told the world is too expensive, the genre is too ambitious or the timing is not right. You do not have to settle the entire adaptation business deal to explore what the story could look like. You can commission a clearly scoped creative proof of concept first, review it, and decide whether the next step is a promotional campaign, another sequence or a conversation with rights holders and production partners.</p>
 <p>Publishing contracts differ. Some authors control screen rights and some have licensed or shared them. Before commissioning adaptation footage or using recognizable content from a book, confirm who controls the relevant rights; obtain permission where required. Production should also address character likenesses, voices, music and the licensing terms of the AI tools used.</p>
 <div class="author-cta"><h2>You've written the book. Let's visualize the story.</h2><p>If you have a bestselling novel, an established series, a business bestseller or a strong backlist title, bring the book title, a short synopsis and the scene you most want to see on screen. We'll discuss whether a cinematic trailer, an author-controlled proof of concept or a combined creative package is the right first deliverable. We'll define the scope, fee, rights and review milestones before production.</p><p><a class="cta" href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Discuss Your Book-to-Screen Concept</a></p><p>Or email <a href="mailto:Jeff@StoryforgeImaginarium.com">Jeff@StoryforgeImaginarium.com</a> · Call or text <a href="tel:+12088077789">(208) 807-7789</a></p></div>
-<p class="source-notes">Production note: Storyforge creates commissioned cinematic visuals and development assets; inclusion of a title in a speculative concept does not establish an endorsement, rights acquisition or adaptation agreement. Source background: <a href="https://kdp.amazon.com/en_US/help/topic/G201499010">Amazon KDP advertising help</a>; <a href="https://advertising.amazon.com/resources/whats-new/author-page-as-landing-pages-for-sponsored-brands">Amazon Ads Sponsored Brands author landing pages</a>. Published November 13, 2026.</p></article><section class="article-card"><h2>Get the AI Showrunner — Director's Brief</h2><p>Read more about author-led book-to-screen development, film proof of concept work and AI-first filmmaking.</p><a class="cta" href="/ai-showrunner-directors-brief/">Browse the Director's Brief</a></section></main><footer class="site-footer"><p>Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</p><nav class="footer-links" aria-label="Footer"><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a> <a href="/jeff-jones/">Jeff Jones</a> <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call</a> <span>Studio Phone: <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></span> <a href="/client-login.html">LOGIN</a></nav></footer></body></html>
+<p class="source-notes">Production note: Storyforge creates commissioned cinematic visuals and development assets; inclusion of a title in a speculative concept does not establish an endorsement, rights acquisition or adaptation agreement. Source background: <a href="https://kdp.amazon.com/en_US/help/topic/G201499010">Amazon KDP advertising help</a>; <a href="https://advertising.amazon.com/resources/whats-new/author-page-as-landing-pages-for-sponsored-brands">Amazon Ads Sponsored Brands author landing pages</a>. Published November 13, 2026.</p></article><section class="article-card"><h2>Get the AI Showrunner — Director's Brief</h2><p>Read more about author-led book-to-screen development, film proof of concept work and AI-first filmmaking.</p><a class="cta" href="/ai-showrunner-directors-brief/">Browse the Director's Brief</a></section>
+<section class="article-card" id="newsletter-signup" style="margin-top:40px;">
+  <h2>Get the AI Showrunner Brief</h2>
+  <p>New articles on AI filmmaking, book-to-screen, and production. No spam — just the brief when something new goes up.</p>
+  <form id="showrunner-form" action="https://script.google.com/macros/s/AKfycbwWPgjKTvuPxzhKf1jjOMKLJy9PMpo_Y6P7N-t-Lga-lXOGoNPNgK64guMdxraTfkCyXw/exec" method="POST" style="display:grid;gap:12px;max-width:480px;">
+    <input type="text" name="name" placeholder="Your name" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="email" name="email" placeholder="Email address" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <input type="text" name="company" placeholder="Company (optional)" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <select name="howHeard" required style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+      <option value="" disabled selected>How did you hear about us?</option>
+      <option value="LinkedIn">LinkedIn</option>
+      <option value="YouTube">YouTube</option>
+      <option value="Facebook">Facebook</option>
+      <option value="X">X</option>
+      <option value="Other">Other website</option>
+    </select>
+    <input type="text" name="sourceDetails" placeholder="If other, which website?" style="padding:12px;border-radius:4px;border:1px solid #333;background:#111;color:#fff;">
+    <button type="submit" class="cta" style="margin-top:8px;border:none;cursor:pointer;">Subscribe</button>
+  </form>
+  <p id="form-message" style="display:none;margin-top:12px;color:#f5b400;"></p>
+</section>
+<script>
+document.getElementById('showrunner-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const msg = document.getElementById('form-message');
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: data });
+    msg.textContent = 'Thanks — you’re on the list!';
+    msg.style.display = 'block';
+    form.reset();
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again or email jeff@storyforgeimaginarium.com';
+    msg.style.display = 'block';
+  }
+});
+</script>
+</main><footer class="site-footer"><p>Storyforge Imaginarium · Hollywood Quality. Silicon Valley Speed.</p><nav class="footer-links" aria-label="Footer"><a href="/ai-showrunner-directors-brief/">The Ai Showrunner</a> <a href="/jeff-jones/">Jeff Jones</a> <a href="https://calendly.com/jeffjones15/15-minute-call" target="_blank" rel="noopener noreferrer">Schedule a Discovery Call</a> <span>Studio Phone: <a class="phone-highlight" href="tel:+12088077789">(208) 807-7789</a></span> <a href="/client-login.html">LOGIN</a></nav></footer></body></html>
