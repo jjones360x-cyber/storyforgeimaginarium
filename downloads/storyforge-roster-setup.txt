@@ -1,0 +1,19 @@
+STORYFORGE PRODUCTION ROSTER — GOOGLE SHEETS SETUP
+
+Use your existing AI Showrunner Newsletter spreadsheet. Leave Sheet1 and Form Responses 1 alone. Form Responses 1 is normally created by a linked Google Form; the website newsletter instead posts to Apps Script. We have not inspected the private script or that tab.
+
+1. Copy the full URL from the address bar of your existing Google spreadsheet (not the Google Form).
+2. Open https://script.google.com/home/start in the same Google account that owns the spreadsheet. Create a NEW project named Storyforge Production Roster. This keeps the existing newsletter script unchanged.
+3. Open https://storyforgeimaginarium.com/downloads/storyforge-roster-apps-script.txt and copy all its code. Replace the default code in the NEW project's Code.gs with it.
+4. At the top, replace PASTE_YOUR_EXISTING_GOOGLE_SHEET_URL_HERE with the spreadsheet URL from step 1. Keep the surrounding single quotes. Save.
+5. Select setupRoster in the function dropdown next to Run. Click Run and authorize your own script to access the spreadsheet and send notifications. If Google displays an unverified-app notice, verify you are authorizing your own newly created project. Never authorize an unfamiliar project.
+6. Return to the spreadsheet. A Production Roster tab and the complete header row should now exist. No manual headers, Google Form, or submission trigger are needed. Keep the spreadsheet private.
+7. In Apps Script choose Deploy > New deployment > Select type (gear icon) > Web app. Set Execute as: Me; Who has access: Anyone. Deploy and authorize if prompted. If your account does not allow Anyone, report that restriction rather than making the spreadsheet public.
+8. Copy the WEB APP URL ending /exec and send it to Jeff's ChatGPT conversation. Do not copy the editor URL or /dev test URL. The website submit button is disabled until this URL is connected.
+9. After connection, test from the public roster page. Verify a row in Production Roster, a success message with a reference, and an email to Studio@StoryforgeImaginarium.com (your existing alias). Check spam. Notification Status should say Sent; failed notifications do not delete applications.
+
+Current Sheets menu: Extensions > Apps Script opens the spreadsheet's existing bound script. Do not replace its Code.gs or add a second doPost there. The NEW standalone project above writes to the SAME spreadsheet with its own endpoint.
+
+Review Status begins as New; change to Reviewed, Shortlisted, Contacted, or Archived as you review. Rates and portfolio links stay private. The script escapes formula-leading text, validates required fields, checks duplicate submission references, and includes a basic honeypot and per-email cooldown. These are basic controls, not comprehensive abuse protection.
+
+Later script edits require Deploy > Manage deployments > Edit > New version > Deploy to retain the endpoint URL. Monitor your sheet and Apps Script executions periodically. Email delivery is subject to Google's quotas and your mailbox filtering.

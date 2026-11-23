@@ -1,0 +1,68 @@
+// STORYFORGE PRODUCTION ROSTER — install in a NEW standalone Apps Script project.
+// Do not replace your existing newsletter script.
+const SPREADSHEET_URL = 'PASTE_YOUR_EXISTING_GOOGLE_SHEET_URL_HERE';
+const TAB_NAME = 'Production Roster';
+const NOTIFY_EMAIL = 'Studio@StoryforgeImaginarium.com';
+const FIELDS = [{"key": "name", "label": "Full name", "required": true, "kind": "text"}, {"key": "email", "label": "Email address", "required": true, "kind": "email"}, {"key": "location", "label": "City and country", "required": true, "kind": "text"}, {"key": "timezone", "label": "Time zone", "required": true, "kind": "text"}, {"key": "identity", "label": "Who would do the work?", "required": true, "kind": "text"}, {"key": "responsibility", "label": "What would you personally handle, and what would you delegate?", "required": true, "kind": "textarea"}, {"key": "role", "label": "Primary role", "required": true, "kind": "text"}, {"key": "skills", "label": "Additional production capabilities", "required": false, "kind": "textarea"}, {"key": "experience", "label": "Years of experience", "required": true, "kind": "textarea"}, {"key": "project1_url", "label": "Project URL", "required": true, "kind": "url"}, {"key": "project1_role", "label": "Your role and personal contribution", "required": true, "kind": "textarea"}, {"key": "project2_url", "label": "Project URL", "required": false, "kind": "url"}, {"key": "project2_role", "label": "Your role and personal contribution", "required": false, "kind": "textarea"}, {"key": "project3_url", "label": "Project URL", "required": false, "kind": "url"}, {"key": "project3_role", "label": "Your role and personal contribution", "required": false, "kind": "textarea"}, {"key": "tools", "label": "Editing software and AI platforms", "required": true, "kind": "textarea"}, {"key": "revision", "label": "Describe a difficult continuity problem or director’s note you resolved", "required": true, "kind": "textarea"}, {"key": "availability", "label": "Earliest start, hours available per week, and production check-in availability", "required": true, "kind": "textarea"}, {"key": "booking", "label": "Booking terms and production expenses", "required": false, "kind": "textarea"}, {"key": "referral", "label": "How did you hear about us?", "required": false, "kind": "textarea"}, {"key": "certification", "label": "Certification", "required": true, "kind": "checkbox"}, {"key": "consent", "label": "Consent", "required": true, "kind": "checkbox"}, {"key": "rate", "label": "Direct hourly subcontractor rate", "required": true, "kind": "text"}];
+const HEADERS = ['Timestamp', 'Submission ID'].concat(FIELDS.map(f => f.label), ['Review Status', 'Notification Status']);
+
+function setupRoster() {
+  const ss = SpreadsheetApp.openByUrl(SPREADSHEET_URL);
+  let sheet = ss.getSheetByName(TAB_NAME);
+  if (!sheet) sheet = ss.insertSheet(TAB_NAME);
+  if (sheet.getLastRow() === 0) {
+    sheet.getRange(1,1,1,HEADERS.length).setValues([HEADERS]);
+    sheet.setFrozenRows(1);
+    sheet.getRange(1,1,1,HEADERS.length).setFontWeight('bold').setBackground('#17202d').setFontColor('#ffffff');
+  } else if (JSON.stringify(sheet.getRange(1,1,1,HEADERS.length).getValues()[0]) !== JSON.stringify(HEADERS)) {
+    throw new Error('Existing Production Roster headers differ. No data changed. Ask for help before proceeding.');
+  }
+  // Request mail permission during setup; this does not send any email.
+  MailApp.getRemainingDailyQuota();
+  console.log('Production Roster tab is ready. Existing tabs were not changed.');
+}
+function doGet() {return json_({service:'Storyforge Production Roster',version:1});}
+function json_(data) {return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);}
+function safeCell_(value) {return /^[=+@\-\t\r\n]/.test(value) ? "'"+value : value;}
+function validate_(p) {
+  if(p.form_type !== 'production_roster' || p.website_check) throw new Error('Invalid request');
+  if(!/^[a-f0-9-]{36}$/i.test(p.submission_id || '')) throw new Error('Invalid reference');
+  FIELDS.forEach(f => {
+    const v=String(p[f.key] || '').trim();
+    if ((f.required && !v) || v.length>4000) throw new Error('Check '+f.label);
+    if(f.kind==='checkbox' && v!=='yes') throw new Error('Certification and consent are required');
+    if(f.kind==='url' && v && !/^https?:\/\/[^\s]+$/i.test(v)) throw new Error('Use an http or https portfolio URL');
+  });
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) throw new Error('Check email address');
+  [2,3].forEach(n => {if(Boolean((p['project'+n+'_url']||'').trim()) !== Boolean((p['project'+n+'_role']||'').trim())) throw new Error('Pair each project URL with your contribution');});
+  const rates=[];for(let n=20;n<140;n+=10) rates.push('$'+n+'–under $'+(n+10)+'/hour');
+  rates.push('$140–$150/hour','My minimum exceeds $150/hour — outside the current roster budget');
+  if(!rates.includes(p.rate)) throw new Error('Select a valid rate range');
+}
+function doPost(e) {
+  let lock;
+  try {
+    const p=e && e.parameter || {};validate_(p);
+    lock=LockService.getScriptLock();lock.waitLock(20000);
+    const sheet=SpreadsheetApp.openByUrl(SPREADSHEET_URL).getSheetByName(TAB_NAME);
+    if(!sheet || JSON.stringify(sheet.getRange(1,1,1,HEADERS.length).getValues()[0])!==JSON.stringify(HEADERS)) throw new Error('Roster is not configured');
+    const last=sheet.getLastRow();
+    if(last>1) {
+      const match=sheet.getRange(2,2,last-1,1).createTextFinder(p.submission_id).matchEntireCell(true).findNext();
+      if(match) return json_({ok:true,submission_id:p.submission_id});
+    }
+    const cache=CacheService.getScriptCache();
+    const key='email-'+Utilities.base64EncodeWebSafe(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,p.email.toLowerCase()));
+    if(cache.get(key)) throw new Error('Please wait a few minutes before another application');
+    const row=[new Date(),p.submission_id].concat(FIELDS.map(f=>safeCell_(String(p[f.key]||'').trim())),['New','Pending']);
+    sheet.appendRow(row);SpreadsheetApp.flush();
+    const rowNumber=sheet.getLastRow();cache.put(key,'1',300);
+    try {
+      if(MailApp.getRemainingDailyQuota()<1) throw new Error('Daily notification quota reached');
+      MailApp.sendEmail({to:NOTIFY_EMAIL,subject:'Storyforge roster application received',body:'New roster application saved. Reference: '+p.submission_id+'\n\n'+FIELDS.map(f=>f.label+': '+String(p[f.key]||'')).join('\n\n')+'\n\nReview in your private spreadsheet: '+SPREADSHEET_URL});
+      sheet.getRange(rowNumber,HEADERS.length).setValue('Sent');
+    } catch(mailError) {sheet.getRange(rowNumber,HEADERS.length).setValue('Failed — review in sheet');console.error('Notification failed; application remains saved.');}
+    return json_({ok:true,submission_id:p.submission_id});
+  } catch(error) {return json_({ok:false,error:'Unable to accept application. Check fields or contact the studio.'});}
+  finally {if(lock && lock.hasLock()) lock.releaseLock();}
+}
