@@ -1,4 +1,4 @@
-// STORYFORGE PRODUCTION COLLECTIVE — install in a NEW standalone Apps Script project.
+// STORYFORGE PREMIER FILMMAKERS COLLECTIVE — install in a NEW standalone Apps Script project.
 // Do not replace your existing newsletter script.
 const SPREADSHEET_URL = 'PASTE_YOUR_EXISTING_GOOGLE_SHEET_URL_HERE';
 const TAB_NAME = 'Production Roster';
@@ -21,7 +21,7 @@ function setupRoster() {
   MailApp.getRemainingDailyQuota();
   console.log('Production Roster tab is ready. Existing tabs were not changed.');
 }
-function doGet() {return json_({service:'Storyforge Production Collective',version:1});}
+function doGet() {return json_({service:'Storyforge Premier Filmmakers Collective',version:1});}
 function json_(data) {return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);}
 function safeCell_(value) {return /^[=+@\-\t\r\n]/.test(value) ? "'"+value : value;}
 function validate_(p) {
