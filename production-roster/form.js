@@ -23,6 +23,6 @@ form.addEventListener('submit', async event => {
   statusBox.textContent='Application received. Your reference is '+submissionId+'. Thank you—we will contact you when a suitable project arises.';
   form.reset();submissionId=crypto.randomUUID();
  } catch(error) {statusBox.textContent='We could not confirm receipt. Your answers are still here. Please retry, or email Studio@StoryforgeImaginarium.com. A retry will use the same reference to avoid duplicates.';}
- finally {button.disabled=false;button.textContent='Submit roster application';statusBox.scrollIntoView({behavior:'smooth',block:'center'});}
+ finally {button.disabled=false;button.textContent='Submit Collective application';statusBox.scrollIntoView({behavior:'smooth',block:'center'});}
 });
 form.addEventListener('input', event => {if(event.target.setCustomValidity) event.target.setCustomValidity('');});
