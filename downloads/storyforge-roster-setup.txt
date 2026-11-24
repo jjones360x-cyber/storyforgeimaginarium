@@ -1,9 +1,9 @@
-STORYFORGE PREMIER FILMMAKERS COLLECTIVE — GOOGLE SHEETS SETUP
+STORYFORGE AI FILMMAKERS GUILD — GOOGLE SHEETS SETUP
 
 Use your existing AI Showrunner Newsletter spreadsheet. Leave existing data and Form Responses 1 alone. Before adding a tab, pin the newsletter script to its named tab: replace SpreadsheetApp.getActiveSpreadsheet().getActiveSheet() with SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sheet1') if the newsletter tab is named Sheet1. Use its exact tab name, not the spreadsheet document title. Update the existing newsletter deployment via Deploy > Manage deployments > Edit > New version > Deploy, keeping its existing URL. Form Responses 1 is normally created by a linked Google Form; the website newsletter instead posts to Apps Script. We have not inspected the private script or that tab.
 
 1. Copy the full URL from the address bar of your existing Google spreadsheet (not the Google Form).
-2. Open https://script.google.com/home/start in the same Google account that owns the spreadsheet. Create a NEW project named Storyforge Premier Filmmakers Collective. This keeps the existing newsletter script unchanged.
+2. Open https://script.google.com/home/start in the same Google account that owns the spreadsheet. Create a NEW project named Storyforge AI Filmmakers Guild. This keeps the existing newsletter script unchanged.
 3. Open https://storyforgeimaginarium.com/downloads/storyforge-roster-apps-script.txt and copy all its code. Replace the default code in the NEW project's Code.gs with it.
 4. At the top, replace PASTE_YOUR_EXISTING_GOOGLE_SHEET_URL_HERE with the spreadsheet URL from step 1. Keep the surrounding single quotes. Save.
 5. Select setupRoster in the function dropdown next to Run. Click Run and authorize your own script to access the spreadsheet and send notifications. If Google displays an unverified-app notice, verify you are authorizing your own newly created project. Never authorize an unfamiliar project.
