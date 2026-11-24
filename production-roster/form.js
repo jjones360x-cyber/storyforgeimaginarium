@@ -1,5 +1,5 @@
-// Populate after the owner deploys the dedicated roster Apps Script web app.
-const ROSTER_ENDPOINT = '';
+// Dedicated Production Collective intake deployment.
+const ROSTER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw5js4-xFwaNO2sU8Nt-skktaVpwBer9tM7NZHRkOCz00h3AyivbbQFZLfNH3p7kI-Szw/exec';
 const form = document.getElementById('roster-form');
 const button = document.getElementById('submit-roster');
 const statusBox = document.getElementById('form-status');
